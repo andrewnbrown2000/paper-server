@@ -1,0 +1,2 @@
+us-west-1 = ami-01bbfe39d6831a971
+us-east-1 = ami-0293e1152bc276de0

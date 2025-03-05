@@ -1,0 +1,10 @@
+[Unit]
+Description=Run check_playercount service every 5 minutes after 5 minutes delay
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=2min
+Unit=paper_playercount.service
+
+[Install]
+WantedBy=timers.target

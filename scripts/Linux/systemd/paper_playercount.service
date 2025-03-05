@@ -1,0 +1,6 @@
+[Unit]
+Description=Run check_playercount script
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/paper_server/check_playercount.sh
