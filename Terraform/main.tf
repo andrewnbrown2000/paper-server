@@ -40,7 +40,7 @@ resource "aws_security_group" "paper_sg" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    prefix_list_ids = ["pl-0e99958a47b22d6ab"] #AWS prefix list id for ec2 instances in us-west-1
+    prefix_list_ids = [var.ec2_instance_connect_prefix_list_id] #EC2 Instance Connect prefix list
   }
 
   egress { #allows all outbout traffic of any type
@@ -58,7 +58,7 @@ resource "aws_instance" "paper_server" {
   vpc_security_group_ids = [aws_security_group.paper_sg.id] # Reference the security group
 
   tags = {
-    Name = "paper_server_from_terraform"
+    Name = var.instance_name
   }
 }
 
